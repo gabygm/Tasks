@@ -34,7 +34,6 @@ export const deleteTaskById = async(req: Request, res: Response)=>{
 
 export const updateTaskWithLables = async(req: Request, res: Response)=>{
     const {id, labels} = req.body
-    console.log("here",labels)
     const updateTask = await prisma.task.update({
         where: {
             id:  parseInt(id) ,
