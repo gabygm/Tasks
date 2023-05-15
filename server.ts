@@ -9,7 +9,10 @@ export default class Server {
         this.port= process.env.PORT
 
     }
-   
+    middleware(){
+        this.app.use(express.json())
+        this.app.use(express.static("public"))
+    }
     listen(){
         this.app.listen(this.port, ()=>{
             console.log("Server is running!")

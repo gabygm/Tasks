@@ -45,10 +45,10 @@ export const updateTaskWithLables = async(req: Request, res: Response)=>{
     return res.send(updateTask)
 }
 
-export const getTaskByLabel = async(req: Request, res: Response)=>{
-    const label = req.params.label
+export const getTaskByLabel = async(req: Request<{},{},{},{label:number}>, res: Response)=>{
+    const label = req.query.label
     const getTaskbyLabel = await prisma.task.findMany(
         { where: 
-            { labels: { hasSome: label } } });    
+            { labels: { hasSome: label.toString()} } });    
     return res.send(getTaskbyLabel)
 }

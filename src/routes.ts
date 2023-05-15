@@ -7,5 +7,5 @@ routes.post("/", createTask)
 routes.get("/", getAllTasks)
 routes.delete("/:id", deleteTaskById)
 routes.put("/labels", updateTaskWithLables)
-routes.get("/:label", getTaskByLabel)
+routes.get("/label", getTaskByLabel)
 
